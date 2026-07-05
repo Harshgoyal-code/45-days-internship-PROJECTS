@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Female Diabetes Predictor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Female Diabetes Predictor System</h1>
+
+    <div class="instructions">
+        <b>Instructions:</b>
+        <ul>
+            <li>All values must be based on medical reports.</li>
+            <li>Do not enter random values for accurate prediction.</li>
+            <li>Follow the given input ranges carefully.</li>
+        </ul>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <label>Pregnancies (0 - 20)</label>
+        <input type="number" name="Pregnancies"
+               min="0" max="20"
+               placeholder="e.g. 2"
+               required>
+
+        <label>Glucose Level (50 - 300 mg/dL)</label>
+        <input type="number" name="Glucose"
+               min="50" max="300"
+               placeholder="e.g. 120"
+               required>
+
+        <label>Blood Pressure (40 - 200 mmHg)</label>
+        <input type="number" name="BloodPressure"
+               min="40" max="200"
+               placeholder="e.g. 70"
+               required>
+
+        <label>Skin Thickness (0 - 100 mm)</label>
+        <input type="number" name="SkinThickness"
+               min="0" max="100"
+               placeholder="e.g. 20"
+               required>
+
+        <label>Insulin (0 - 900 µU/mL)</label>
+        <input type="number" name="Insulin"
+               min="0" max="900"
+               placeholder="e.g. 80"
+               required>
+
+        <label>BMI (10.0 - 70.0)</label>
+        <input type="number" name="BMI"
+               min="10" max="70"
+               step="0.1"
+               placeholder="e.g. 24.5"
+               required>
+
+        <label>Diabetes Pedigree Function (0.0 - 2.5)</label>
+        <input type="number" name="DiabetesPedigreeFunction"
+               min="0" max="2.5"
+               step="0.001"
+               placeholder="e.g. 0.2"
+               required>
+
+        <label>Age (20 - 100 years)</label>
+        <input type="number" name="Age"
+               min="20" max="100"
+               placeholder="e.g. 25"
+               required>
+
+        <button type="submit">Predict Diabetes Risk</button>
+    </form>
+
+</div>
+
+</body>
+</html>
