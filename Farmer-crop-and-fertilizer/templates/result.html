@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="result-body">
+
+<div class="result-card">
+
+    <h1 class="title">🌾 Prediction Result</h1>
+
+    <!-- Crop Result -->
+    {% if crop %}
+        <div class="box crop-box">
+            <h2>Recommended Crop</h2>
+            <h1>{{ crop }}</h1>
+        </div>
+    {% endif %}
+
+    <!-- Fertilizer Result -->
+    {% if fertilizer %}
+        <div class="box fert-box">
+            <h2>Recommended Fertilizer</h2>
+            <h1>{{ fertilizer }}</h1>
+
+            <h3>Remark</h3>
+            <p>{{ remark }}</p>
+        </div>
+    {% endif %}
+
+    <div class="btn-group">
+
+        <a href="/">
+            <button>🏠 Home</button>
+        </a>
+
+        <a href="/crop">
+            <button>🌱 Crop Again</button>
+        </a>
+
+        <a href="/fertilization">
+            <button>🧪 Fertilizer Again</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

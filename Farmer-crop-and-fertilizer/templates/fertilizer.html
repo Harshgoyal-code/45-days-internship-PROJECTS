@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="fertilizer-container">
+
+    <h1>🌱 Fertilizer Recommendation</h1>
+
+    <form action="/predict_fertilizer" method="POST">
+
+        <label>Temperature (°C)</label>
+        <input type="number" step="any" name="Temperature" required>
+
+        <label>Moisture</label>
+        <input type="number" step="any" name="Moisture" required>
+
+        <label>Rainfall (mm)</label>
+        <input type="number" step="any" name="Rainfall" required>
+
+        <label>pH</label>
+        <input type="number" step="any" name="PH" required>
+
+        <label>Nitrogen (N)</label>
+        <input type="number" step="any" name="Nitrogen" required>
+
+        <label>Phosphorous (P)</label>
+        <input type="number" step="any" name="Phosphorous" required>
+
+        <label>Potassium (K)</label>
+        <input type="number" step="any" name="Potassium" required>
+
+        <label>Carbon</label>
+        <input type="number" step="any" name="Carbon" required>
+
+        <label>Soil Type</label>
+        <select name="Soil">
+        {% for s in soils %}
+        <option>{{ s }}</option>
+        {% endfor %}
+        </select>
+
+        <label>Crop</label>
+        <select name="Crop">
+        {% for c in crops %}
+        <option>{{ c }}</option>
+        {% endfor %}
+            </select>
+
+        <button type="submit">🌿 Predict Fertilizer</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

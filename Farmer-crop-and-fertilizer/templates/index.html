@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Guider App</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌾 Welcome to Farmer Guider App 🌾</h1>
+        
+<img src="{{ url_for('static', filename='images/sprawling-agricultural-farm.jpg') }}" 
+     alt="Farmer Image"
+     style="width:350px; border-radius:15px; margin:20px;">
+
+        <p>
+            AI Powered Crop & Fertilizer Recommendation System
+        </p>
+
+        <div class="buttons">
+
+            <a href="/crop">
+                <button class="btn">🌱 Predict Crop</button>
+            </a>
+
+            <a href="/fertilization">
+                <button class="btn">🧪 Predict Fertilizer</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
