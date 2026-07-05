@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="result-container">
+    <div class="result-box">
+        <h2>Security Assessment Report</h2>
+
+        <span class="status-badge" style="background-color: {{ color }};">
+            {{ result }}
+        </span>
+
+        <p class="desc-text">{{ desc }}</p>
+
+        <a href="/" class="btn">Scan Another Transaction</a>
+    </div>
+</div>
+
+</body>
+</html>

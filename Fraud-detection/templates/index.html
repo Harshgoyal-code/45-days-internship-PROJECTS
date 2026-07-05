@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+
+    <!-- CSS file link -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+
+<body>
+
+<div class="container">
+    <h1>Fraud Detection System (K-Means)</h1>
+
+    <form action="/predict" method="POST">
+        <label>Transaction Amount:</label>
+        <input type="number" step="any" name="transaction_amount" required>
+
+        <label>Hour of Day (0-23):</label>
+        <input type="number" name="hour_of_day" required>
+
+        <label>Is Weekend (0 or 1):</label>
+        <input type="number" name="is_weekend" required>
+
+        <label>Number of Items:</label>
+        <input type="number" name="num_items" required>
+
+        <label>Customer Age:</label>
+        <input type="number" step="any" name="customer_age" required>
+
+        <label>Previous Transactions:</label>
+        <input type="number" name="prev_transactions" required>
+
+        <label>Distance from Home:</label>
+        <input type="number" step="any" name="distance_from_home" required>
+
+        <label>Device Type (0, 1, 2):</label>
+        <input type="number" name="device_type" required>
+
+        <label>Network Quality:</label>
+        <input type="number" step="any" name="network_quality" required>
+
+        <label>Is First Transaction (0 or 1):</label>
+        <input type="number" name="is_first_transaction" required>
+
+        <label>Store Type:</label>
+        <input type="number" name="store_type" required>
+
+        <label>Velocity Score:</label>
+        <input type="number" step="any" name="velocity_score" required>
+
+        <button type="submit">Predict Cluster</button>
+    </form>
+</div>
+
+</body>
+</html>
